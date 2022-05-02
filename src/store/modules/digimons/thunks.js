@@ -6,7 +6,7 @@ const addDigimonsThunk = (input)=> (dispatch) => {
 
     axios.get(`https://digimon-api.vercel.app/api/digimon/name/${input}`)
         .then(res => {dispatch(addDigimons(res.data[0]));})
-        .catch(_ => {toast.error("Ops! Tente outro nome!")})
+        .catch(err => {toast.error("Ops! Tente outro nome!")})
 }
 
 export default addDigimonsThunk
